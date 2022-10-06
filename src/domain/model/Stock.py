@@ -1,6 +1,5 @@
 from enum import Enum
 
-
 class Stock(Enum):
     BRASILAGRO = "AGRO3"
     BANCO_DO_BRASIL = "BBAS3"
@@ -11,8 +10,3 @@ class Stock(Enum):
     PETROBRAS = "PETR4"
     TUPY = "TUPY3"
     VALE = "VALE3"
-    BTG_PACTUAL_LOGISTICA = "BTLG11"
-    IRIDIUM = "IRDM11"
-    MALLS_BRASIL_PLURAL = "MALL11"
-    MAUA_CAPITAL = "MCCI11"
-    TRX_REAL_ESTATE = "TRXF11"

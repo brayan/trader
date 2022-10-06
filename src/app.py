@@ -1,8 +1,15 @@
+from data.datasource.RealEstateRemoteDataSourceImpl import RealEstateRemoteDataSourceImpl
 from data.datasource.StockRemoteDataSourceImpl import StockRemoteDataSourceImpl
-from data.mapper.StockToInfoMoneyMapper import map_stock_to_info_money
+from domain.model.RealEstate import RealEstate
 from domain.model.Stock import Stock
 
-for data in Stock:
-    dataSource = StockRemoteDataSourceImpl()
-    price = dataSource.get_stock_price(data)
-    print(price)
+stockDataSource = StockRemoteDataSourceImpl()
+realEstateDataSource = RealEstateRemoteDataSourceImpl()
+
+for stock in Stock:
+    info = stockDataSource.get_stock_info(stock)
+    print(info)
+
+for realEstate in RealEstate:
+    info = realEstateDataSource.get_real_estate_info(realEstate)
+    print(info)

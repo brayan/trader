@@ -1,4 +1,3 @@
-from nis import match
 import requests
 import bs4
 from data.datasource.StockRemoteDataSource import StockRemoteDataSource
@@ -8,12 +7,10 @@ from domain.model.Stock import Stock
 
 URL = "https://www.infomoney.com.br/cotacoes/b3/acao/"
 
-# https://www.infomoney.com.br/cotacoes/b3/fii/fundos-imobiliarios-btlg11/
-
 class StockRemoteDataSourceImpl(StockRemoteDataSource):
     
-    def get_stock_price(self, company: Stock) -> float:
-        stock_info_money = map_stock_to_info_money(company)
+    def get_stock_price(self, stock: Stock) -> float:
+        stock_info_money = map_stock_to_info_money(stock)
         
         result = requests.get(URL + stock_info_money.value)
         soup = bs4.BeautifulSoup(result.text, "html.parser")
@@ -21,3 +18,7 @@ class StockRemoteDataSourceImpl(StockRemoteDataSource):
         price = section.find_next('p').get_text(strip=True)
 
         return price
+
+    def get_stock_info(self, stock: Stock) -> str:
+        price = self.get_stock_price(stock)
+        return stock.name + ": " + price
