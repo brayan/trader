@@ -23,8 +23,7 @@ class Presenter:
             time.sleep(1)
     
     def _get_info(self):
-        print("Getting Info....")
-        print(datetime.datetime.now())
+        print("Getting Info... " + str(datetime.datetime.now()))
         print()
         self._get_all_stocks_info()
         self._get_all_real_estate_info()
