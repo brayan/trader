@@ -1,15 +1,8 @@
 from data.datasource.RealEstateRemoteDataSourceImpl import RealEstateRemoteDataSourceImpl
 from data.datasource.StockRemoteDataSourceImpl import StockRemoteDataSourceImpl
-from domain.model.RealEstate import RealEstate
-from domain.model.Stock import Stock
+from presentation.Presentation import Presentation
 
-stockDataSource = StockRemoteDataSourceImpl()
-realEstateDataSource = RealEstateRemoteDataSourceImpl()
+stock_remote_data_source = StockRemoteDataSourceImpl()
+real_estate_remote_data_source = RealEstateRemoteDataSourceImpl()
 
-for stock in Stock:
-    info = stockDataSource.get_stock_info(stock)
-    print(info)
-
-for realEstate in RealEstate:
-    info = realEstateDataSource.get_real_estate_info(realEstate)
-    print(info)
+Presentation(stock_remote_data_source, real_estate_remote_data_source).start()
