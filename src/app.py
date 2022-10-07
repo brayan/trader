@@ -1,8 +1,8 @@
 from data.datasource.RealEstateRemoteDataSourceImpl import RealEstateRemoteDataSourceImpl
 from data.datasource.StockRemoteDataSourceImpl import StockRemoteDataSourceImpl
-from presentation.Presentation import Presentation
+from presentation.Presenter import Presenter
 
 stock_remote_data_source = StockRemoteDataSourceImpl()
 real_estate_remote_data_source = RealEstateRemoteDataSourceImpl()
 
-Presentation(stock_remote_data_source, real_estate_remote_data_source).start()
+Presenter(stock_remote_data_source, real_estate_remote_data_source).start()
