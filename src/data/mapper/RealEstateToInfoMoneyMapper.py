@@ -1,6 +1,7 @@
 from data.model.RealEstateInfoMoney import RealEstateInfoMoney
 from domain.model.RealEstate import RealEstate
 
+
 def map_real_estate_to_info_money(realEstate: RealEstate) -> RealEstateInfoMoney:
     if realEstate == RealEstate.BTG_PACTUAL_LOGISTICA:
         return RealEstateInfoMoney.BTG_PACTUAL_LOGISTICA

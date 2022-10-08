@@ -1,5 +1,6 @@
 from enum import Enum
 
+
 class RealEstateInfoMoney(Enum):
     BTG_PACTUAL_LOGISTICA = "fundos-imobiliarios-btlg11"
     IRIDIUM = "fundos-imobiliarios-irdm11"

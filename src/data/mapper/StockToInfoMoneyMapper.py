@@ -1,6 +1,7 @@
 from data.model.StockInfoMoney import StockInfoMoney
 from domain.model.Stock import Stock
 
+
 def map_stock_to_info_money(company: Stock) -> StockInfoMoney:
     if company == Stock.BRASILAGRO:
         return StockInfoMoney.BRASILAGRO

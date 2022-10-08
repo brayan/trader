@@ -1,5 +1,6 @@
 from enum import Enum
 
+
 class Stock(Enum):
     BRASILAGRO = "AGRO3"
     BANCO_DO_BRASIL = "BBAS3"

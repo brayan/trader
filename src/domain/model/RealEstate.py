@@ -1,5 +1,6 @@
 from enum import Enum
 
+
 class RealEstate(Enum):
     BTG_PACTUAL_LOGISTICA = "BTLG11"
     IRIDIUM = "IRDM11"
