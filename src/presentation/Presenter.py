@@ -19,6 +19,7 @@ class Presenter:
         self.real_estate_remote_data_source = real_estate_remote_data_source
 
     def start(self):
+        self._get_info()
         schedule.every(5).minutes.do(self._get_info)
         b3 = B3StockExchange()
         while True:
