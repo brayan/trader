@@ -21,7 +21,7 @@ class RealEstateRemoteDataSourceImpl(RealEstateRemoteDataSource):
         section = soup.find('div', attrs={ 'class':"cotacoes__header-price" })
         price = section.find_next('span').get_text(strip=True)
 
-        return price
+        return price.replace(",", ".")
 
     def get_real_estate_info(self, realEstate: RealEstate) -> str:
         price = self.get_real_estate_price(realEstate)

@@ -1,23 +1,23 @@
-from data.model.StockInfoMoney import StockInfoMoney
-from domain.model.Stock import Stock
+from data.model.CompanyInfoMoney import CompanyInfoMoney
+from domain.model.Company import Company
 
 
-def map_stock_to_info_money(company: Stock) -> StockInfoMoney:
-    if company == Stock.BRASILAGRO:
-        return StockInfoMoney.BRASILAGRO
-    elif company == Stock.BANCO_DO_BRASIL:
-        return StockInfoMoney.BANCO_DO_BRASIL
-    elif company == Stock.BB_SEGURIDADE:
-        return StockInfoMoney.BB_SEGURIDADE
-    elif company == Stock.COPEL:
-        return StockInfoMoney.COPEL
-    elif company == Stock.ENGIE_BRASIL:
-        return StockInfoMoney.ENGIE_BRASIL
-    elif company == Stock.MAHLE_METAL_LEVE:
-        return StockInfoMoney.MAHLE_METAL_LEVE
-    elif company == Stock.PETROBRAS:
-        return StockInfoMoney.PETROBRAS
-    elif company == Stock.TUPY:
-        return StockInfoMoney.TUPY
-    elif company == Stock.VALE:
-        return StockInfoMoney.VALE
+def map_company_to_info_money(company: Company) -> CompanyInfoMoney:
+    if company == Company.BRASILAGRO:
+        return CompanyInfoMoney.BRASILAGRO
+    elif company == Company.BANCO_DO_BRASIL:
+        return CompanyInfoMoney.BANCO_DO_BRASIL
+    elif company == Company.BB_SEGURIDADE:
+        return CompanyInfoMoney.BB_SEGURIDADE
+    elif company == Company.COPEL:
+        return CompanyInfoMoney.COPEL
+    elif company == Company.ENGIE_BRASIL:
+        return CompanyInfoMoney.ENGIE_BRASIL
+    elif company == Company.MAHLE_METAL_LEVE:
+        return CompanyInfoMoney.MAHLE_METAL_LEVE
+    elif company == Company.PETROBRAS:
+        return CompanyInfoMoney.PETROBRAS
+    elif company == Company.TUPY:
+        return CompanyInfoMoney.TUPY
+    elif company == Company.VALE:
+        return CompanyInfoMoney.VALE

@@ -1,7 +1,7 @@
 from enum import Enum
 
 
-class StockInfoMoney(Enum):
+class CompanyInfoMoney(Enum):
     BRASILAGRO = "brasilagro-agro3"
     BANCO_DO_BRASIL = "banco-do-brasil-bbas3"
     BB_SEGURIDADE = "bb-seguridade-bbse3"
