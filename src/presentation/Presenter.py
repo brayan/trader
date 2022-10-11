@@ -1,11 +1,7 @@
 from datetime import datetime
 import time
 import schedule
-from data.datasource.RealEstateRemoteDataSource import RealEstateRemoteDataSource
-from data.datasource.CompanyRemoteDataSource import CompanyRemoteDataSource
 from domain.model.B3StockExchange import B3StockExchange
-from domain.model.RealEstate import RealEstate
-from domain.model.Company import Company
 from domain.service.StockExchangeService import StockExchangeService
 from domain.usecase.GetStocksUseCase import GetStocksUseCase
 
@@ -35,17 +31,5 @@ class Presenter:
             print("# "+ stock.name + " - " + stock.ticker + " #")
             print("Price: R$"+ str(stock.price) + ", Average Price: R$" + str(stock.average_price))
             print()
-        # self._get_all_stocks_info()
-        # self._get_all_real_estate_info()
         print()
         print()
-        
-    def _get_all_stocks_info(self):
-        for stock in Company:
-            info = self._company_remote_data_source.get_stock_info(stock)
-            print(info)
-    
-    def _get_all_real_estate_info(self):
-        for realEstate in RealEstate:
-            info = self._real_estate_remote_data_source.get_real_estate_info(realEstate)
-            print(info)

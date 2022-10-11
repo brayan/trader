@@ -16,6 +16,4 @@ class StockPortfolioRemoteDataSourceImpl(StockPortfolioRemoteDataSource):
         resultFromJson = result.json()
         for stock in resultFromJson["stocks"]:
             if stock["ticker"] == ticker:
-                return StockData(name = stock["name"], 
-                            ticker = stock["ticker"],
-                            average_price = stock["averagePrice"])
+                return StockData(name = stock["name"], ticker = stock["ticker"], average_price = stock["averagePrice"])

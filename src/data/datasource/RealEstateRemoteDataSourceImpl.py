@@ -22,7 +22,3 @@ class RealEstateRemoteDataSourceImpl(RealEstateRemoteDataSource):
         price = section.find_next('span').get_text(strip=True)
 
         return price.replace(",", ".")
-
-    def get_real_estate_info(self, realEstate: RealEstate) -> str:
-        price = self.get_real_estate_price(realEstate)
-        return realEstate.name + ": " + price

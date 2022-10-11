@@ -23,7 +23,3 @@ class CompanyRemoteDataSourceImpl(CompanyRemoteDataSource):
         price = section.find_next('p').get_text(strip=True)
 
         return price.replace(",", ".")
-
-    def get_company_info(self, company: Company) -> str:
-        price = self.get_company_price(company)
-        return company.name + ": " + price
