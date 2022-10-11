@@ -1,6 +1,6 @@
-from data.model.StockData import StockData
+from src.data.model.StockData import StockData
 
 
 class StockPortfolioRemoteDataSource:
-    def get_stock_info(ticker: str) -> StockData:
+    def get_stock_info(self, ticker: str) -> StockData:
         pass

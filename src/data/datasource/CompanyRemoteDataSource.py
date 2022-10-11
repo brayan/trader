@@ -1,6 +1,6 @@
-from domain.model.Company import Company
+from src.domain.model.Company import Company
 
 
 class CompanyRemoteDataSource:
-    def get_company_price(company: Company) -> float:
+    def get_company_price(self, company: Company) -> float:
         pass

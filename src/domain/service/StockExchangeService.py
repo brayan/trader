@@ -15,7 +15,8 @@ class StockExchangeService:
         now = datetime.now().time()
 
         return now >= opening_time_object and now <= closing_time_object
-    
-    def is_today_weekday(self) -> bool:
+
+    @staticmethod
+    def is_today_weekday() -> bool:
         today = date.today().weekday()
         return today != 5 and today != 6
