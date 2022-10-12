@@ -1,10 +1,10 @@
-from src.data.datasource.CompanyRemoteDataSourceImpl import CompanyRemoteDataSourceImpl
-from src.data.datasource.RealEstateRemoteDataSourceImpl import RealEstateRemoteDataSourceImpl
-from src.data.datasource.StockPortfolioRemoteDataSourceImpl import StockPortfolioRemoteDataSourceImpl
-from src.data.repository.StockRepositoryImpl import StockRepositoryImpl
-from src.domain.service.StockExchangeService import StockExchangeService
-from src.domain.usecase.GetStocksUseCaseImpl import GetStocksUseCaseImpl
-from src.presentation.Presenter import Presenter
+from domain.service.StockExchangeService import StockExchangeService
+from data.datasource.CompanyRemoteDataSourceImpl import CompanyRemoteDataSourceImpl
+from data.datasource.RealEstateRemoteDataSourceImpl import RealEstateRemoteDataSourceImpl
+from data.datasource.StockPortfolioRemoteDataSourceImpl import StockPortfolioRemoteDataSourceImpl
+from data.repository.StockRepositoryImpl import StockRepositoryImpl
+from domain.usecase.GetStocksUseCaseImpl import GetStocksUseCaseImpl
+from presentation.Presenter import Presenter
 
 _stock_exchange_service = StockExchangeService()
 _company_remote_data_source = CompanyRemoteDataSourceImpl()
