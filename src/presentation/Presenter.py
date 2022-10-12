@@ -1,7 +1,7 @@
-from datetime import datetime
 import time
-import schedule
+from datetime import datetime
 
+import schedule
 from domain.model.B3StockExchange import B3StockExchange
 from domain.service.StockExchangeService import StockExchangeService
 from domain.usecase.GetStocksUseCase import GetStocksUseCase
@@ -16,7 +16,7 @@ class Presenter:
 
     def start(self):
         self._get_info()
-        schedule.every(5).minutes.do(self._get_info)
+        schedule.every(30).minutes.do(self._get_info)
         b3 = B3StockExchange()
         while True:
             if self._stock_exchange_service.is_stock_exchange_open(b3.opening_time, b3.closing_time):
