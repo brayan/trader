@@ -33,6 +33,7 @@ class Presenter:
             print("Price: R$" + str(stock.price))
             print("Average Price: R$" + str(stock.average_price))
             print("Ceiling Price: R$" + str(stock.ceiling_price))
+            print("Price Variation: " + str(stock.price_variation) + "%")
             print("Average Price Variation: " + str(stock.average_price_variation) + "%")
             print()
         print()

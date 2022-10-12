@@ -1,5 +1,5 @@
 class StockData:
-    def __init__(self, name: str, ticker: str, average_price: float, ceiling_price: float, ):
+    def __init__(self, name: str, ticker: str, average_price: float, ceiling_price: float):
         self._name = name
         self._ticker = ticker
         self._average_price = average_price
