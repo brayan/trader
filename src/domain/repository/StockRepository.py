@@ -1,6 +1,6 @@
-from src.domain.model.Company import Company
-from src.domain.model.RealEstate import RealEstate
-from src.domain.model.Stock import Stock
+from domain.model.Company import Company
+from domain.model.RealEstate import RealEstate
+from domain.model.Stock import Stock
 
 
 class StockRepository:

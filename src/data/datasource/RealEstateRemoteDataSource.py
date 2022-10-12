@@ -1,4 +1,4 @@
-from src.domain.model.RealEstate import RealEstate
+from domain.model.RealEstate import RealEstate
 
 
 class RealEstateRemoteDataSource:

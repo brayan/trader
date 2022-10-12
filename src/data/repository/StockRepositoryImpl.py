@@ -1,10 +1,10 @@
-from src.data.datasource.CompanyRemoteDataSource import CompanyRemoteDataSource
-from src.data.datasource.RealEstateRemoteDataSource import RealEstateRemoteDataSource
-from src.data.datasource.StockPortfolioRemoteDataSource import StockPortfolioRemoteDataSource
-from src.domain.model.Company import Company
-from src.domain.model.RealEstate import RealEstate
-from src.domain.model.Stock import Stock
-from src.domain.repository.StockRepository import StockRepository
+from data.datasource.CompanyRemoteDataSource import CompanyRemoteDataSource
+from data.datasource.RealEstateRemoteDataSource import RealEstateRemoteDataSource
+from data.datasource.StockPortfolioRemoteDataSource import StockPortfolioRemoteDataSource
+from domain.model.Company import Company
+from domain.model.RealEstate import RealEstate
+from domain.model.Stock import Stock
+from domain.repository.StockRepository import StockRepository
 
 
 class StockRepositoryImpl(StockRepository):

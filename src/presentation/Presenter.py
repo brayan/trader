@@ -2,9 +2,9 @@ from datetime import datetime
 import time
 import schedule
 
-from src.domain.model.B3StockExchange import B3StockExchange
-from src.domain.service.StockExchangeService import StockExchangeService
-from src.domain.usecase.GetStocksUseCase import GetStocksUseCase
+from domain.model.B3StockExchange import B3StockExchange
+from domain.service.StockExchangeService import StockExchangeService
+from domain.usecase.GetStocksUseCase import GetStocksUseCase
 
 
 class Presenter:

@@ -1,4 +1,4 @@
-from src.domain.model.Company import Company
+from domain.model.Company import Company
 
 
 class CompanyRemoteDataSource:

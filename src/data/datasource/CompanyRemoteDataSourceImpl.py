@@ -3,9 +3,9 @@ import bs4
 from urllib3.exceptions import InsecureRequestWarning
 from urllib3 import disable_warnings
 
-from src.data.datasource.CompanyRemoteDataSource import CompanyRemoteDataSource
-from src.data.mapper.StockToInfoMoneyMapper import map_company_to_info_money
-from src.domain.model.Company import Company
+from data.datasource.CompanyRemoteDataSource import CompanyRemoteDataSource
+from data.mapper.StockToInfoMoneyMapper import map_company_to_info_money
+from domain.model.Company import Company
 
 
 class CompanyRemoteDataSourceImpl(CompanyRemoteDataSource):
@@ -17,7 +17,7 @@ class CompanyRemoteDataSourceImpl(CompanyRemoteDataSource):
     def get_company_price(self, company: Company) -> float:
         stock_info_money = map_company_to_info_money(company)
 
-        result = requests.get(self._URL + stock_info_money.value, verify=False)
+        result = requests.get(self._URL + str(stock_info_money.value), verify=False)
 
         soup = bs4.BeautifulSoup(result.text, "html.parser")
         section = soup.find('div', attrs={'class': "value"})

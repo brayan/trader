@@ -3,9 +3,9 @@ import requests
 from urllib3 import disable_warnings
 from urllib3.exceptions import InsecureRequestWarning
 
-from src.data.datasource.RealEstateRemoteDataSource import RealEstateRemoteDataSource
-from src.data.mapper.RealEstateToInfoMoneyMapper import map_real_estate_to_info_money
-from src.domain.model.RealEstate import RealEstate
+from data.datasource.RealEstateRemoteDataSource import RealEstateRemoteDataSource
+from data.mapper.RealEstateToInfoMoneyMapper import map_real_estate_to_info_money
+from domain.model.RealEstate import RealEstate
 
 
 class RealEstateRemoteDataSourceImpl(RealEstateRemoteDataSource):

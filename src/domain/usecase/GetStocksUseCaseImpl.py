@@ -1,7 +1,7 @@
-from src.domain.model.Company import Company
-from src.domain.model.RealEstate import RealEstate
-from src.domain.repository.StockRepository import StockRepository
-from src.domain.usecase.GetStocksUseCase import GetStocksUseCase
+from domain.model.Company import Company
+from domain.model.RealEstate import RealEstate
+from domain.repository.StockRepository import StockRepository
+from domain.usecase.GetStocksUseCase import GetStocksUseCase
 
 
 class GetStocksUseCaseImpl(GetStocksUseCase):
