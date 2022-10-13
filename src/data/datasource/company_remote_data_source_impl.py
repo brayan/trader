@@ -1,11 +1,12 @@
 import bs4
 import requests
-from data.datasource.CompanyRemoteDataSource import CompanyRemoteDataSource
-from data.mapper.StockToInfoMoneyMapper import map_company_to_info_money
-from data.model.StockInfoMoneyData import StockInfoMoneyData
-from domain.model.Company import Company
 from urllib3 import disable_warnings
 from urllib3.exceptions import InsecureRequestWarning
+
+from data.datasource.company_remote_data_source import CompanyRemoteDataSource
+from data.mapper.stock_to_info_money_mapper import map_company_to_info_money
+from data.model.stock_info_money_data import StockInfoMoneyData
+from domain.model.company import Company
 
 
 class CompanyRemoteDataSourceImpl(CompanyRemoteDataSource):
@@ -14,7 +15,7 @@ class CompanyRemoteDataSourceImpl(CompanyRemoteDataSource):
     def __init__(self):
         disable_warnings(InsecureRequestWarning)
 
-    def get_company_stock(self, company: Company) -> StockInfoMoneyData:
+    def get_company_stock(self, company: Company) -> StockInfoMoneyData or None:
         try:
             stock_info_money = map_company_to_info_money(company)
 

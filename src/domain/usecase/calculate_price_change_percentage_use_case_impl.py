@@ -1,4 +1,4 @@
-from domain.usecase.CalculatePriceChangePercentageUseCase import CalculatePriceChangePercentageUseCase
+from domain.usecase.calculate_price_change_percentage_use_case import CalculatePriceChangePercentageUseCase
 
 
 class CalculatePriceChangePercentageUseCaseImpl(CalculatePriceChangePercentageUseCase):

@@ -1,10 +1,10 @@
-from data.datasource.CompanyRemoteDataSource import CompanyRemoteDataSource
-from data.datasource.RealEstateRemoteDataSource import RealEstateRemoteDataSource
-from data.datasource.StockPortfolioRemoteDataSource import StockPortfolioRemoteDataSource
-from domain.model.Company import Company
-from domain.model.RealEstate import RealEstate
-from domain.model.Stock import Stock
-from domain.repository.StockRepository import StockRepository
+from data.datasource.company_remote_data_source import CompanyRemoteDataSource
+from data.datasource.real_estate_remote_data_source import RealEstateRemoteDataSource
+from data.datasource.stock_portfolio_remote_data_source import StockPortfolioRemoteDataSource
+from domain.model.company import Company
+from domain.model.real_estate import RealEstate
+from domain.model.stock import Stock
+from domain.repository.stock_repository import StockRepository
 
 
 class StockRepositoryImpl(StockRepository):
@@ -16,30 +16,30 @@ class StockRepositoryImpl(StockRepository):
         self._real_estate_data_source = real_estate_data_source
         self._stock_portfolio_remote_data_source = stock_portfolio_remote_data_source
 
-    def get_stock_from_company(self, company: Company) -> Stock:
+    def get_stock_from_company(self, company: Company) -> Stock or None:
         company_stock_data = self._company_remote_data_source.get_company_stock(company)
-        stock_portfolio = self._stock_portfolio_remote_data_source.get_stock_info(company.value)
+        stock_portfolio = self._stock_portfolio_remote_data_source.get_stock_info(str(company.value))
 
         if company_stock_data is None:
             return None
 
         return Stock(name=stock_portfolio.name,
-                     ticker=company.value,
+                     ticker=str(company.value),
                      price=company_stock_data.current_price,
                      average_price=stock_portfolio.average_price,
                      ceiling_price=stock_portfolio.ceiling_price,
                      price_variation=company_stock_data.price_change_percentage,
                      average_price_variation=0.0)
 
-    def get_stock_from_real_estate(self, real_estate: RealEstate) -> Stock:
+    def get_stock_from_real_estate(self, real_estate: RealEstate) -> Stock or None:
         real_estate_stock_data = self._real_estate_data_source.get_real_estate_stock(real_estate)
-        stock_portfolio = self._stock_portfolio_remote_data_source.get_stock_info(real_estate.value)
+        stock_portfolio = self._stock_portfolio_remote_data_source.get_stock_info(str(real_estate.value))
 
         if real_estate_stock_data is None:
             return None
 
         return Stock(name=stock_portfolio.name,
-                     ticker=real_estate.value,
+                     ticker=str(real_estate.value),
                      price=real_estate_stock_data.current_price,
                      average_price=stock_portfolio.average_price,
                      ceiling_price=stock_portfolio.ceiling_price,

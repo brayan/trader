@@ -1,5 +1,5 @@
-from data.model.CompanyInfoMoney import CompanyInfoMoney
-from domain.model.Company import Company
+from data.model.company_info_money import CompanyInfoMoney
+from domain.model.company import Company
 
 
 def map_company_to_info_money(company: Company) -> CompanyInfoMoney:

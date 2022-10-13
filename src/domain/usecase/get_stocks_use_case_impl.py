@@ -1,8 +1,8 @@
-from domain.model.Company import Company
-from domain.model.RealEstate import RealEstate
-from domain.repository.StockRepository import StockRepository
-from domain.usecase.CalculatePriceChangePercentageUseCase import CalculatePriceChangePercentageUseCase
-from domain.usecase.GetStocksUseCase import GetStocksUseCase
+from domain.model.company import Company
+from domain.model.real_estate import RealEstate
+from domain.repository.stock_repository import StockRepository
+from domain.usecase.calculate_price_change_percentage_use_case import CalculatePriceChangePercentageUseCase
+from domain.usecase.get_stocks_use_case import GetStocksUseCase
 
 
 class GetStocksUseCaseImpl(GetStocksUseCase):

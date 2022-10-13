@@ -1,8 +1,9 @@
 import requests
-from data.datasource.StockPortfolioRemoteDataSource import StockPortfolioRemoteDataSource
-from data.model.StockData import StockData
 from urllib3 import disable_warnings
 from urllib3.exceptions import InsecureRequestWarning
+
+from data.datasource.stock_portfolio_remote_data_source import StockPortfolioRemoteDataSource
+from data.model.stock_data import StockData
 
 
 class StockPortfolioRemoteDataSourceImpl(StockPortfolioRemoteDataSource):

@@ -1,4 +1,4 @@
-from data.model.StockData import StockData
+from data.model.stock_data import StockData
 
 
 class StockPortfolioRemoteDataSource:

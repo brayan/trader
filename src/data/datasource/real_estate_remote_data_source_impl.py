@@ -1,11 +1,12 @@
 import bs4
 import requests
-from data.datasource.RealEstateRemoteDataSource import RealEstateRemoteDataSource
-from data.mapper.RealEstateToInfoMoneyMapper import map_real_estate_to_info_money
-from data.model.StockInfoMoneyData import StockInfoMoneyData
-from domain.model.RealEstate import RealEstate
 from urllib3 import disable_warnings
 from urllib3.exceptions import InsecureRequestWarning
+
+from data.datasource.real_estate_remote_data_source import RealEstateRemoteDataSource
+from data.mapper.real_estate_to_info_money_mapper import map_real_estate_to_info_money
+from data.model.stock_info_money_data import StockInfoMoneyData
+from domain.model.real_estate import RealEstate
 
 
 class RealEstateRemoteDataSourceImpl(RealEstateRemoteDataSource):
@@ -14,7 +15,7 @@ class RealEstateRemoteDataSourceImpl(RealEstateRemoteDataSource):
     def __init__(self):
         disable_warnings(InsecureRequestWarning)
 
-    def get_real_estate_stock(self, real_estate: RealEstate) -> StockInfoMoneyData:
+    def get_real_estate_stock(self, real_estate: RealEstate) -> StockInfoMoneyData or None:
         try:
             real_estate_info_money = map_real_estate_to_info_money(real_estate)
 

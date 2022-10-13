@@ -1,5 +1,5 @@
-from data.model.RealEstateInfoMoney import RealEstateInfoMoney
-from domain.model.RealEstate import RealEstate
+from data.model.real_estate_info_money import RealEstateInfoMoney
+from domain.model.real_estate import RealEstate
 
 
 def map_real_estate_to_info_money(real_estate: RealEstate) -> RealEstateInfoMoney:
