@@ -20,6 +20,9 @@ class StockRepositoryImpl(StockRepository):
         company_stock_data = self._company_remote_data_source.get_company_stock(company)
         stock_portfolio = self._stock_portfolio_remote_data_source.get_stock_info(company.value)
 
+        if company_stock_data is None:
+            return None
+
         return Stock(name=stock_portfolio.name,
                      ticker=company.value,
                      price=company_stock_data.current_price,
@@ -31,6 +34,9 @@ class StockRepositoryImpl(StockRepository):
     def get_stock_from_real_estate(self, real_estate: RealEstate) -> Stock:
         real_estate_stock_data = self._real_estate_data_source.get_real_estate_stock(real_estate)
         stock_portfolio = self._stock_portfolio_remote_data_source.get_stock_info(real_estate.value)
+
+        if real_estate_stock_data is None:
+            return None
 
         return Stock(name=stock_portfolio.name,
                      ticker=real_estate.value,

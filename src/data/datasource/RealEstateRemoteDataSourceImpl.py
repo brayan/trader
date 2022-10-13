@@ -34,6 +34,6 @@ class RealEstateRemoteDataSourceImpl(RealEstateRemoteDataSource):
 
             return StockInfoMoneyData(current_price=float(price.replace(",", ".")),
                                       price_change_percentage=float(price_change_formatted))
-        except ValueError:
-            print("Error parsing " + str(real_estate.value))
-            return StockInfoMoneyData(current_price=0.0, price_change_percentage=0.0)
+        except ValueError as e:
+            print("[ERROR] " + str(real_estate.value) + ": " + str(e))
+            return None

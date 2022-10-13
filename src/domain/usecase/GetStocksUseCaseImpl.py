@@ -16,12 +16,16 @@ class GetStocksUseCaseImpl(GetStocksUseCase):
 
         for company in Company:
             company_stock = self._stock_repository.get_stock_from_company(company)
+            if company_stock is None:
+                continue
             company_stock.average_price_variation = self._calculate_price_change_percentage_use_case.execute(
                 company_stock.price, company_stock.average_price)
             stocks.append(company_stock)
 
         for real_estate in RealEstate:
             real_estate_stock = self._stock_repository.get_stock_from_real_estate(real_estate)
+            if real_estate_stock is None:
+                continue
             real_estate_stock.average_price_variation = self._calculate_price_change_percentage_use_case.execute(
                 real_estate_stock.price, real_estate_stock.average_price)
             stocks.append(real_estate_stock)
