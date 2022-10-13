@@ -33,3 +33,4 @@ class CompanyRemoteDataSourceImpl(CompanyRemoteDataSource):
                                       price_change_percentage=float(price_change_formatted))
         except ValueError:
             print("Error parsing " + str(company.value))
+            return StockInfoMoneyData(current_price=0.0, price_change_percentage=0.0)
