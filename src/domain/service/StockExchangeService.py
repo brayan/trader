@@ -1,5 +1,5 @@
-from datetime import datetime
 from datetime import date
+from datetime import datetime
 
 
 class StockExchangeService:
@@ -11,7 +11,7 @@ class StockExchangeService:
     def is_trading_time(self, opening_time: str, closing_time: str) -> bool:
         opening_time_object = datetime.strptime(opening_time, self._TIME_PATTERN).time()
         closing_time_object = datetime.strptime(closing_time, self._TIME_PATTERN).time()
-        
+
         now = datetime.now().time()
 
         return now >= opening_time_object and now <= closing_time_object

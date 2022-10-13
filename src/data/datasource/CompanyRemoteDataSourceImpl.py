@@ -1,12 +1,11 @@
-import requests
 import bs4
-from urllib3.exceptions import InsecureRequestWarning
-from urllib3 import disable_warnings
-
+import requests
 from data.datasource.CompanyRemoteDataSource import CompanyRemoteDataSource
 from data.mapper.StockToInfoMoneyMapper import map_company_to_info_money
 from data.model.StockInfoMoneyData import StockInfoMoneyData
 from domain.model.Company import Company
+from urllib3 import disable_warnings
+from urllib3.exceptions import InsecureRequestWarning
 
 
 class CompanyRemoteDataSourceImpl(CompanyRemoteDataSource):
@@ -31,6 +30,6 @@ class CompanyRemoteDataSourceImpl(CompanyRemoteDataSource):
 
             return StockInfoMoneyData(current_price=float(price.replace(",", ".")),
                                       price_change_percentage=float(price_change_formatted))
-        except ValueError as e:
+        except Exception as e:
             print("[ERROR] " + str(company.value) + ": " + str(e))
             return None

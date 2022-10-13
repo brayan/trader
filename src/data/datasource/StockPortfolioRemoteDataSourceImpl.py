@@ -1,8 +1,8 @@
 import requests
 from data.datasource.StockPortfolioRemoteDataSource import StockPortfolioRemoteDataSource
 from data.model.StockData import StockData
-from urllib3.exceptions import InsecureRequestWarning
 from urllib3 import disable_warnings
+from urllib3.exceptions import InsecureRequestWarning
 
 
 class StockPortfolioRemoteDataSourceImpl(StockPortfolioRemoteDataSource):
@@ -12,11 +12,11 @@ class StockPortfolioRemoteDataSourceImpl(StockPortfolioRemoteDataSource):
         disable_warnings(InsecureRequestWarning)
 
     def get_stock_info(self, ticker: str) -> StockData:
-        result = requests.get(self._URL, verify = False)
-        resultFromJson = result.json()
-        for stock in resultFromJson["stocks"]:
+        result = requests.get(self._URL, verify=False)
+        result_json = result.json()
+        for stock in result_json["stocks"]:
             if stock["ticker"] == ticker:
-                return StockData(name = stock["name"], 
-                                ticker = stock["ticker"], 
-                                average_price = float(stock["averagePrice"]),
-                                ceiling_price = float(stock["ceilingPrice"]))
+                return StockData(name=stock["name"],
+                                 ticker=stock["ticker"],
+                                 average_price=float(stock["averagePrice"]),
+                                 ceiling_price=float(stock["ceilingPrice"]))
