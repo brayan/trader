@@ -1,6 +1,7 @@
 from data.datasource.company_remote_data_source import CompanyRemoteDataSource
 from data.datasource.real_estate_remote_data_source import RealEstateRemoteDataSource
 from data.datasource.stock_portfolio_remote_data_source import StockPortfolioRemoteDataSource
+from data.email_utils import send_email
 from domain.model.company import Company
 from domain.model.real_estate import RealEstate
 from domain.model.stock import Stock
@@ -45,3 +46,6 @@ class StockRepositoryImpl(StockRepository):
                      ceiling_price=stock_portfolio.ceiling_price,
                      price_variation=real_estate_stock_data.price_change_percentage,
                      average_price_variation=0.0)
+
+    def send_report(self, stocks: list):
+        send_email()

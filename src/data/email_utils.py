@@ -1,26 +1,20 @@
-# Import smtplib for the actual sending function
 import smtplib
 
-# Import the email modules we'll need
-from email.mime.text import MIMEText
 
-# Open a plain text file for reading.  For this example, assume that
-# the text file contains only ASCII characters.
-# with open(textfile, 'rb') as fp:
-    # Create a text/plain message
-    # msg = MIMEText(fp.read())
+def send_email():
+    sender = 'brayan.bedritchuk@gmail.com'
+    receivers = ['brayan.bedritchuk@gmail.com']
 
-# me == the sender's email address
-# you == the recipient's email address
-email_from = "brayan.bedritchuk@gmail.com"
-email_to = "brayan.bedritchuk@gmail.com"
+    message = """From: From Person <brayan.bedritchuk@gmail.com>
+    To: To Brayan Bedritchuk <brayan.bedritchuk@gmail.com>
+    Subject: SMTP e-mail test
+    
+    This is a test e-mail message.
+    """
 
-msg['Subject'] = "My subject"
-msg['From'] = email_from
-msg['To'] = email_to
-
-# Send the message via our own SMTP server, but don't include the
-# envelope header.
-s = smtplib.SMTP('localhost')
-s.sendmail(email_from, [email_to], msg.as_string())
-s.quit()
+    try:
+        smtp_obj = smtplib.SMTP('localhost')
+        smtp_obj.sendmail(sender, receivers, message)
+        print("Successfully sent email")
+    except smtplib.SMTPException:
+        print("Error: unable to send email")

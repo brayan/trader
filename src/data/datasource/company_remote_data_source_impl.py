@@ -32,5 +32,5 @@ class CompanyRemoteDataSourceImpl(CompanyRemoteDataSource):
             return StockInfoMoneyData(current_price=float(price.replace(",", ".")),
                                       price_change_percentage=float(price_change_formatted))
         except Exception as e:
-            print("[ERROR] " + str(company.value) + ": " + str(e))
+            print(f"[ERROR] {str(company.value)}: {str(e)}")
             return None

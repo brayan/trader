@@ -9,3 +9,6 @@ class StockRepository:
 
     def get_stock_from_real_estate(self, real_estate: RealEstate) -> Stock or None:
         pass
+
+    def send_report(self, stocks: list):
+        pass
