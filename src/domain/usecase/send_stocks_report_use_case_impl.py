@@ -1,6 +1,6 @@
-from src.domain.repository.stock_repository import StockRepository
-from src.domain.usecase.get_stocks_use_case import GetStocksUseCase
-from src.domain.usecase.send_stocks_report_use_case import SendStocksReportUseCase
+from domain.repository.stock_repository import StockRepository
+from domain.usecase.get_stocks_use_case import GetStocksUseCase
+from domain.usecase.send_stocks_report_use_case import SendStocksReportUseCase
 
 
 class SendStocksReportUseCaseImpl(SendStocksReportUseCase):
