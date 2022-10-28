@@ -9,5 +9,6 @@ class CompanyInfoMoney(Enum):
     ENGIE_BRASIL = "engie-brasil-egie3"
     MAHLE_METAL_LEVE = "metal-leve-leve3"
     PETROBRAS = "petrobras-petr4"
+    IRANI = "celul-irani-rani3"
     TUPY = "tupy-tupy3"
     VALE = "vale-vale3"

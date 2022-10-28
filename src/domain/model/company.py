@@ -9,5 +9,6 @@ class Company(Enum):
     ENGIE_BRASIL = "EGIE3"
     MAHLE_METAL_LEVE = "LEVE3"
     PETROBRAS = "PETR4"
+    IRANI = "RANI3"
     TUPY = "TUPY3"
     VALE = "VALE3"

@@ -17,6 +17,8 @@ def map_company_to_info_money(company: Company) -> CompanyInfoMoney:
         return CompanyInfoMoney.MAHLE_METAL_LEVE
     elif company == Company.PETROBRAS:
         return CompanyInfoMoney.PETROBRAS
+    elif company == Company.IRANI:
+        return CompanyInfoMoney.IRANI
     elif company == Company.TUPY:
         return CompanyInfoMoney.TUPY
     elif company == Company.VALE:
