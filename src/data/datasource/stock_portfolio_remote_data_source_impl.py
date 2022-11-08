@@ -7,7 +7,7 @@ from data.model.stock_data import StockData
 
 
 class StockPortfolioRemoteDataSourceImpl(StockPortfolioRemoteDataSource):
-    _URL = "https://raw.githubusercontent.com/brayan/api/master/trader/stock-portfolio.json"
+    _URL = "https://brayan.com.br/api/stocks"
 
     def __init__(self):
         disable_warnings(InsecureRequestWarning)
